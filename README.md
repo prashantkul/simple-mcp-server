@@ -107,7 +107,7 @@ This notebook is ready to use in:
 The notebook includes automatic public URL generation via ngrok, allowing students to test with MCP Inspector:
 
 1. Start the server in the notebook (Cell 11)
-2. Copy the public URL (e.g., `https://abc123.ngrok.io/sse`)
+2. Copy the public URL (e.g., `https://abc123.ngrok.io/mcp`)
 3. Run MCP Inspector in a terminal: `npx @modelcontextprotocol/inspector`
 4. Enter the URL in the browser interface and click "Connect"
 5. Explore and test all tools interactively!
