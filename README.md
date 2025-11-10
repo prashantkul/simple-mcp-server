@@ -143,7 +143,7 @@ This notebook is ready to use in:
 
 ### ADK Agent (Notebook 2):
 - **Google ADK** - Agent Development Kit
-- **Gemini 2.0 Flash** - LLM for agent intelligence
+- **Gemini 2.5 Flash** - LLM for agent intelligence
 - **MCPToolSet** - MCP server integration
 - **StreamableHTTPConnectionParams** - HTTP/SSE connection handling
 
