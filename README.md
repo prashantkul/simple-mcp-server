@@ -2,58 +2,96 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/simple-mcp-server/blob/claude/mcp-colab-customer-demo-011CUyKnnHZc4KxRNuBxQry3/mcp_customer_demo.ipynb)
 
-An interactive Jupyter notebook for teaching students how to build MCP (Model Context Protocol) servers. This hands-on tutorial demonstrates building a complete customer management system with MCP integration.
+An interactive Jupyter notebook series for teaching students how to build MCP (Model Context Protocol) servers and AI agents. This hands-on tutorial demonstrates building a complete customer management system with MCP integration and Google ADK.
 
 ## 📚 What is This?
 
-This is an educational resource designed to teach the **Model Context Protocol (MCP)** through a practical, working example. Students will build a full-stack MCP server that exposes customer management tools to AI assistants.
+This educational resource teaches the **Model Context Protocol (MCP)** and **Google Agent Development Kit (ADK)** through practical, working examples:
+
+### 📓 Two Notebooks:
+
+1. **`mcp_customer_demo.ipynb`** - Build the MCP Server
+   - Create an HTTP-based MCP server with Flask
+   - Implement 6 customer management tools
+   - Learn MCP protocol fundamentals (JSON-RPC 2.0, SSE streaming)
+   - Test with MCP Inspector
+
+2. **`adk_customer_agent.ipynb`** - Build the AI Agent [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/simple-mcp-server/blob/claude/mcp-colab-customer-demo-011CUyKnnHZc4KxRNuBxQry3/adk_customer_agent.ipynb)
+   - Create an AI agent using Google ADK
+   - Connect to the MCP server with MCPToolSet
+   - Interact with customer data using natural language
+   - Test conversational AI capabilities
+
+**Complete both notebooks** to understand the full MCP ecosystem: building servers and creating agents that use them!
 
 ## 🎯 Learning Objectives
 
-By completing this tutorial, students will learn:
+By completing both notebooks, students will learn:
 
+### MCP Server (Notebook 1):
 - **MCP Protocol Fundamentals** - JSON-RPC 2.0 message structure and SSE streaming
 - **Server Implementation** - Building HTTP-based MCP servers with Flask
 - **Tool Definition** - Creating MCP tools with proper JSON schemas
 - **Database Integration** - Connecting MCP tools to SQLite databases
-- **Error Handling** - Implementing robust error responses
 - **Testing & Debugging** - Using MCP Inspector for interactive testing
+
+### Google ADK Agent (Notebook 2):
+- **Agent Development** - Building AI agents with Google ADK
+- **MCPToolSet Integration** - Connecting agents to MCP servers
+- **Natural Language Processing** - Understanding user intent and tool selection
+- **Conversational AI** - Creating chat interfaces for data access
 - **Real-World Application** - Building practical AI-integrated systems
 
 ## ✨ Features
 
-### 🔧 Complete MCP Server Implementation
+### 🔧 Complete MCP Server Implementation (Notebook 1)
 - **6 MCP Tools** for customer management (get, list, add, update, disable, activate)
 - **Flask-based HTTP server** with Server-Sent Events (SSE) support
 - **SQLite database** with sample data
 - **Proper error handling** and validation
 - **MCP protocol compliance** (specification 2024-11-05)
-
-### 🌐 Public Access & Testing
 - **Automatic ngrok tunnel** for public URL generation
-- **MCP Inspector integration** - Test directly from the web
-- **Local testing** included in the notebook
-- **Background server threading** keeps Colab responsive
+- **MCP Inspector integration** - Test with visual interface
+- **10 interactive test cases** demonstrating the protocol
+
+### 🤖 Google ADK AI Agent (Notebook 2)
+- **Gemini-powered agent** using Google ADK framework
+- **MCPToolSet integration** - Auto-discovers MCP server tools
+- **Natural language interface** - No API knowledge needed
+- **Conversational interaction** - Chat with your data
+- **10 test scenarios** from simple to complex queries
+- **Error handling** - Graceful handling of edge cases
+- **System instructions** - Customizable agent behavior
 
 ### 📖 Educational Design
 - **Step-by-step instructions** with clear explanations
-- **💡 Learning points** throughout the notebook
-- **Interactive demonstrations** - 10 test cases included
+- **💡 Learning points** throughout both notebooks
+- **Interactive demonstrations** with real examples
 - **Visual output** with colored terminal display
-- **Code comments** explaining MCP-specific concepts
-- **Architecture diagrams** and protocol explanations
+- **Code comments** explaining key concepts
+- **Architecture diagrams** showing system flow
 
 ## 🚀 Quick Start
 
 ### For Students:
 
-1. **Click the "Open in Colab" badge** at the top of this README
+#### Part 1: Build the MCP Server
+
+1. **Open Notebook 1**: Click the first badge at the top → `mcp_customer_demo.ipynb`
 2. **Set up ngrok** (see [Ngrok Setup](#-ngrok-setup) section below for details)
 3. **Run cells 1-11** to set up the server
-4. **Run test cells 14-32** to see MCP in action
+4. **Run test cells 14-32** to see MCP protocol in action
 5. **Copy the public URL** from the output (e.g., `https://xxxx.ngrok.io/mcp`)
-6. **Run MCP Inspector**: `npx @modelcontextprotocol/inspector`
-7. **Connect and test** your MCP server!
+6. **Test with MCP Inspector**: Run `npx @modelcontextprotocol/inspector`
+
+#### Part 2: Build the AI Agent
+
+1. **Keep Notebook 1 running** (MCP server must be active)
+2. **Open Notebook 2**: Click the second badge → `adk_customer_agent.ipynb`
+3. **Set up Google API key** (instructions in the notebook)
+4. **Add MCP server URL** to Colab secrets
+5. **Run all cells** to create and test the AI agent
+6. **Chat with your data** using natural language!
 
 ### For Instructors:
 
@@ -95,13 +133,19 @@ This notebook is ready to use in:
 
 ## 🛠️ Technical Stack
 
+### MCP Server (Notebook 1):
 - **Python 3.9+** - Core language
 - **Flask** - HTTP server framework
 - **SQLite** - Embedded database
 - **Server-Sent Events (SSE)** - Streaming protocol
 - **pyngrok** - Public URL tunneling
-- **termcolor** - Colored terminal output
 - **JSON-RPC 2.0** - Message protocol
+
+### ADK Agent (Notebook 2):
+- **Google ADK** - Agent Development Kit
+- **Gemini 2.0 Flash** - LLM for agent intelligence
+- **MCPToolSet** - MCP server integration
+- **StreamableHTTPConnectionParams** - HTTP/SSE connection handling
 
 ## 🔍 Testing with MCP Inspector
 
@@ -213,9 +257,18 @@ If you don't set up ngrok, the server will still work locally within the Colab e
 
 ## 🔗 Resources
 
+### MCP Resources:
 - **MCP Specification**: [modelcontextprotocol.io](https://modelcontextprotocol.io)
 - **MCP Python SDK**: [GitHub](https://github.com/modelcontextprotocol/python-sdk)
 - **MCP Inspector**: Run with `npx @modelcontextprotocol/inspector`
+
+### Google ADK Resources:
+- **Google ADK Documentation**: [google.github.io/adk-docs](https://google.github.io/adk-docs/)
+- **MCP Tools Guide**: [google.github.io/adk-docs/tools/mcp-tools](https://google.github.io/adk-docs/tools/mcp-tools/)
+- **ADK Python Repository**: [github.com/google/adk-python](https://github.com/google/adk-python)
+- **Gemini API**: [ai.google.dev](https://ai.google.dev)
+
+### Other Resources:
 - **Flask Documentation**: [flask.palletsprojects.com](https://flask.palletsprojects.com)
 - **SQLite Tutorial**: [sqlite.org/docs.html](https://sqlite.org/docs.html)
 
