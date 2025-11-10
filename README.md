@@ -21,6 +21,7 @@ This educational resource teaches the **Model Context Protocol (MCP)** and **Goo
    - Connect to the MCP server with MCPToolSet
    - Interact with customer data using natural language
    - Test conversational AI capabilities
+   - Deploy with `adk web` and ngrok for public access
 
 **Complete both notebooks** to understand the full MCP ecosystem: building servers and creating agents that use them!
 
@@ -62,6 +63,8 @@ By completing both notebooks, students will learn:
 - **10 test scenarios** from simple to complex queries
 - **Error handling** - Graceful handling of edge cases
 - **System instructions** - Customizable agent behavior
+- **ADK Web deployment** - Public chat UI with `adk web` + ngrok
+- **Shareable URL** - Let others chat with your agent
 
 ### 📖 Educational Design
 - **Step-by-step instructions** with clear explanations
@@ -92,6 +95,7 @@ By completing both notebooks, students will learn:
 4. **Add MCP server URL** to Colab secrets
 5. **Run all cells** to create and test the AI agent
 6. **Chat with your data** using natural language!
+7. **(Optional) Deploy with ADK Web**: Run deployment cells to get a public chat UI
 
 ### For Instructors:
 
