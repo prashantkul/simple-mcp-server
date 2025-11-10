@@ -222,15 +222,17 @@ CREATE TABLE customers (
 
 ## 🌐 Ngrok Setup
 
+### For MCP Server (Notebook 1)
+
 To enable public access to your MCP server (required for testing with MCP Inspector), you need to set up ngrok:
 
-### 1. Get Ngrok Auth Token
+#### 1. Get Ngrok Auth Token
 
 1. Go to [https://ngrok.com](https://ngrok.com)
 2. Sign up for a free account
 3. Go to your dashboard and copy your auth token
 
-### 2. Add Token to Google Colab Secrets
+#### 2. Add Token to Google Colab Secrets
 
 1. Open your Colab notebook
 2. Click the **🔑 (Secrets)** icon in the left sidebar
@@ -241,7 +243,7 @@ To enable public access to your MCP server (required for testing with MCP Inspec
 5. Toggle **Notebook access** to ON
 6. Run Cell 11 to start the server with public URL
 
-### 3. Verify Setup
+#### 3. Verify Setup
 
 When Cell 11 runs successfully, you should see:
 ```
@@ -255,9 +257,45 @@ If you see a warning about missing token, double-check that:
 - Notebook access is enabled
 - You've re-run Cell 11 after adding the secret
 
+### For ADK Web Deployment (Outside Colab)
+
+If you want to run ADK Web locally and expose it via ngrok:
+
+#### Option 1: Using the Helper Script
+
+```bash
+# Set environment variables
+export GOOGLE_API_KEY="your-google-api-key"
+export MCP_SERVER_URL="https://xxxx.ngrok.io/mcp"
+
+# Run with ngrok
+python start_adk_with_ngrok.py \
+  --agent_path agent.py \
+  --ngrok_token YOUR_NGROK_TOKEN
+```
+
+The script will:
+- Start the ADK web server on port 8000
+- Create an ngrok tunnel
+- Display the public URL for sharing
+
+#### Option 2: Manual Setup
+
+```bash
+# Terminal 1: Start ADK web
+export GOOGLE_API_KEY="your-key"
+export MCP_SERVER_URL="https://xxxx.ngrok.io/mcp"
+adk web --agent_path agent.py
+
+# Terminal 2: Start ngrok
+ngrok http 8000
+```
+
 ### Without Ngrok
 
-If you don't set up ngrok, the server will still work locally within the Colab environment, but you won't be able to test with MCP Inspector.
+If you don't set up ngrok:
+- **MCP Server**: Will work locally within Colab, but can't test with MCP Inspector
+- **ADK Web**: Will be accessible only on localhost (http://127.0.0.1:8000)
 
 ## 🔗 Resources
 
