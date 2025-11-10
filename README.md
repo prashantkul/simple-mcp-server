@@ -51,7 +51,7 @@ By completing this tutorial, students will learn:
 2. **Run cells 1-11** to set up the server
 3. **Run test cells 14-32** to see MCP in action
 4. **Copy the public URL** from the output
-5. **Open [MCP Inspector](https://inspector.anthropic.com)**
+5. **Run MCP Inspector**: `npx @modelcontextprotocol/inspector`
 6. **Connect and test** your MCP server!
 
 ### For Instructors:
@@ -104,12 +104,12 @@ This notebook is ready to use in:
 
 ## 🔍 Testing with MCP Inspector
 
-The notebook includes automatic public URL generation via ngrok, allowing students to test with [MCP Inspector](https://inspector.anthropic.com):
+The notebook includes automatic public URL generation via ngrok, allowing students to test with MCP Inspector:
 
 1. Start the server in the notebook (Cell 11)
 2. Copy the public URL (e.g., `https://abc123.ngrok.io/sse`)
-3. Open MCP Inspector
-4. Enter the URL and click "Connect"
+3. Run MCP Inspector in a terminal: `npx @modelcontextprotocol/inspector`
+4. Enter the URL in the browser interface and click "Connect"
 5. Explore and test all tools interactively!
 
 **Benefits:**
@@ -180,7 +180,7 @@ CREATE TABLE customers (
 
 - **MCP Specification**: [modelcontextprotocol.io](https://modelcontextprotocol.io)
 - **MCP Python SDK**: [GitHub](https://github.com/modelcontextprotocol/python-sdk)
-- **MCP Inspector**: [inspector.anthropic.com](https://inspector.anthropic.com)
+- **MCP Inspector**: Run with `npx @modelcontextprotocol/inspector`
 - **Flask Documentation**: [flask.palletsprojects.com](https://flask.palletsprojects.com)
 - **SQLite Tutorial**: [sqlite.org/docs.html](https://sqlite.org/docs.html)
 
