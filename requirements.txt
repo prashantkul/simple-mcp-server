@@ -1,0 +1,11 @@
+# Flask web framework
+Flask==3.0.0
+
+# CORS support for Flask
+Flask-Cors==4.0.0
+
+# WSGI HTTP server for production
+gunicorn==21.2.0
+
+# Python WSGI HTTP server (alternative)
+waitress==3.0.0
